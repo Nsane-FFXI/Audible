@@ -85,11 +85,6 @@ return {
         Wildcard = '*mireu*',
         Sound = 'Mireu.wav',
     },
-	{
-		Mode = 'unity',
-        Wildcard = "*???*",
-        Sound = 'Mireu.wav',
-    },
     {
 		Mode = 'yell',
         Wildcard = '*nisroch*',
