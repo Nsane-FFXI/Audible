@@ -237,9 +237,10 @@ windower.register_event('incoming chunk', function(id, data)
         if (player.name ~= nil) and (packet.Message:lower():contains(player.name:lower())) then
             EvaluateTriggers('ChatMon', 'Talk');
         end
+        local parsed = windower.convert_auto_trans(packet.Message);
         local params = {
-            Message = packet.Message,
-            LowerMessage = string.lower(packet.Message),
+            Message = parsed,
+            LowerMessage = string.lower(parsed),
             Mode = res.chat[packet.Mode].en,
             Sender = packet['Sender Name'],
         };
@@ -464,9 +465,10 @@ windower.register_event('examined', function(sender_name,sender_index)
 end)
 
 windower.register_event('incoming text', function(original,modified,mode)
+    local parsed = windower.convert_auto_trans(original);
     local params = {
-        Message = original,
-        LowerMessage = string.lower(original),
+        Message = parsed,
+        LowerMessage = string.lower(parsed),
         Mode = mode,
     };
     EvaluateText(params);
