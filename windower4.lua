@@ -192,7 +192,7 @@ end
 
 local function volume_label(p)
     p = math.floor(math.max(0, math.min(100, p or 50)))
-    if p == 0  then return 'Mute' end
+    if p == 0  then return 'Muted' end
     if p <= 37 then return 'Soft' end
     if p <= 62 then return 'Normal' end
     if p <= 87 then return 'Loud' end
